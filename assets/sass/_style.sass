@@ -1,7 +1,7 @@
 // Blocks
 .block-image, 
 .block-gallery
-    @include in-page-with-or-without-sidebar
+    @include in-page-without-sidebar
         .block-content figure
             background: $color-background-alt
             display: block
@@ -16,13 +16,13 @@
                     margin: auto
                     max-height: unset
 .block-image 
-    @include in-page-with-or-without-sidebar
+    @include in-page-without-sidebar
         figure img
             width: col(8)
 .block-gallery 
-    @include in-page-with-or-without-sidebar
+    @include in-page-without-sidebar
         .gallery
-            @include grid(2)
+            @include grid(2, desktop)
         figure
             padding-right: $spacing3
             padding-left: $spacing3
