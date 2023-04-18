@@ -19,9 +19,10 @@
 .block-image figure
     padding-right: $spacing4
     padding-left: $spacing4
-    @include media-breakpoint-up(xxl)
-        padding-right: calc(#{$spacing5} * 2)
-        padding-left: calc(#{$spacing5} * 2)
+    @include in-page-without-sidebar
+        @include media-breakpoint-up(xxl)
+            padding-right: calc(#{$spacing5} * 2)
+            padding-left: calc(#{$spacing5} * 2)
 .block-gallery 
     @include in-page-with-or-without-sidebar
         .gallery
