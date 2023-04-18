@@ -1,0 +1,11 @@
+{{ $bodyclass := .Params.bodyclass | default "" }}
+
+{{ $bodyclass = printf "%s__%s %s" .Type .Kind $bodyclass }}
+
+{{ $bodyclass = printf "%s full-width" $bodyclass }}
+
+{{ if .Params.design.toc.offcanvas }}
+  {{ $bodyclass = printf "%s offcanvas-toc" $bodyclass }}
+{{ end }}
+
+{{ return $bodyclass }}
