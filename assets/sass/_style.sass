@@ -1,0 +1,31 @@
+// Blocks
+.block-image, 
+.block-gallery
+    @include in-page-with-or-without-sidebar
+        .block-content figure
+            background: $color-background-alt
+            display: block
+            padding-bottom: $spacing5
+            padding-top: $spacing4
+            a
+                margin: 0
+                width: 100%
+            picture
+                margin: 0
+                img
+                    margin: auto
+                    max-height: unset
+                    width: 100%
+.block-image figure
+    padding-right: $spacing4
+    padding-left: $spacing4
+.block-gallery 
+    @include in-page-with-or-without-sidebar
+        .gallery
+            @include grid(2)
+        figure
+            padding-right: $spacing3
+            padding-left: $spacing3
+            @include media-breakpoint-up(xxl)
+                padding-right: $spacing5
+                padding-left: $spacing5
