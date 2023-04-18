@@ -2,3 +2,6 @@ theme: noesya-hugo-theme
 paginate: 18
 enableRobotsTXT: true
 removePathAccents: true
+params:
+  breadcrumb:
+    position: none
