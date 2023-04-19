@@ -1,0 +1,9 @@
+params:
+  image_sizes:
+    blocks:
+      image:
+        desktop: 1600
+    sections:
+      posts:
+        item:
+          desktop:  1600
