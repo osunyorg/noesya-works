@@ -6,6 +6,7 @@ params:
   breadcrumb:
     position: none
   posts:
+    date_format: "2006"
     index:
       show_description: false
   seo:
