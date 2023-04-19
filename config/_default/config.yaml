@@ -5,6 +5,9 @@ removePathAccents: true
 params:
   breadcrumb:
     position: none
+  posts:
+    index:
+      show_description: false
   seo:
     title:
       separator: "•"
