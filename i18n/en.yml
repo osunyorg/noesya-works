@@ -1,0 +1,13 @@
+blocks:
+  posts: 
+    title: Projects
+commons:
+  pagination:
+    between:
+      posts: Navigation between projects
+pages:
+  posts: Projects
+posts:
+  next: Next project
+  next_aria: Next project “{{ .Title }}”
+  title: Project
