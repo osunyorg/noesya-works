@@ -68,6 +68,26 @@
                 padding-left: $spacing5
             img
                 width: col(4,6)
+    .gallery
+        align-items: inherit
+        figcaption
+            font-size: 0
+            opacity: 0
+        figure.cover
+            position: relative
+            a
+                bottom: 0
+                left: 0
+                position: absolute
+                right: 0
+                top: 0
+                picture
+                    height: 100%
+                    img
+                        height: 100%
+                        object-fit: cover
+                        width: 100%
+
 .block-gallery + .block-image,
 .block-image + .block-gallery
     padding-top: 0
