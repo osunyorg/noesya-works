@@ -1,18 +1,19 @@
 {{- if or .PrevInSection .NextInSection -}}
-<div class="block block-pagination">
+<div class="block-pagination">
   <div class="container">
     <div class="block-content">
-      <nav class="posts-navigation" aria-label="{{ i18n "commons.pagination.between.posts" }}">
+      <nav class="projects-navigation" aria-label="{{ i18n "commons.pagination.between.posts" }}">
         <ul>
           {{- if .PrevInSection -}}
             {{with .Site.RegularPages.Prev . }}
               <li>
                 {{ $title := partial "PrepareHTML" .Title -}}
                 <a href="{{.RelPermalink}}" title="{{ safeHTML (i18n "posts.next_aria" (dict "Title" $title)) }}">
-                  <span>
+                  <span class="navigation">
                     {{- i18n "posts.next" -}}
                   </span>
-                  {{- $title -}}
+                  <h3>{{- $title -}}</h3>
+                  <span>{{ .Date.Format "2006"}}</span>
                 </a>
               </li>
             {{end}}
@@ -23,10 +24,11 @@
                 <li>
                   {{ $title := partial "PrepareHTML" .Title -}}
                   <a href="{{.RelPermalink}}" title="{{ safeHTML (i18n "posts.next_aria" (dict "Title" $title)) }}">
-                    <span>
+                    <span class="navigation">
                       {{- i18n "posts.next" -}}
                     </span>
-                    {{- $title -}}
+                    <h3>{{- $title -}}</h3>
+                    <span>{{ .Date.Format "2006"}}</span>
                   </a>
                 </li>
               {{ end }}

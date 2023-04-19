@@ -14,7 +14,7 @@
         margin-right: -$grid-gutter
         .content
             flex-direction: column
-            height: 95vh
+            height: 75vh
             justify-content: flex-end
             max-height: $hero-height-desktop
             overflow: hidden
@@ -35,6 +35,31 @@
                 color: white
                 margin: $grid-gutter
                 z-index: 2
+    .projects-navigation
+        align-items: center
+        display: flex
+        font-size: $project-navigation-text
+        justify-content: center
+        min-height: 100vh
+        ul
+            list-style: none
+            text-align: center
+            a
+                display: flex
+                flex-direction: column
+                text-decoration: none
+                .navigation
+                    font-family: $body-font-family
+                    font-style: italic
+                h3
+                    @include h1
+                    font-size: $project-navigation-title
+                    margin: $spacing3 0 $spacing0
+                    @include media-breakpoint-up(desktop)
+                        font-size: $project-navigation-title
+                    + span
+                        color: $color-text-alt
+
 // Blocks
 .block-image, 
 .block-gallery
