@@ -58,6 +58,8 @@
     @include in-page-without-sidebar
         .gallery
             @include grid(2, desktop)
+            @include media-breakpoint-up(desktop)
+                grid-gap: $spacing3
         figure
             padding-right: $spacing3
             padding-left: $spacing3
@@ -66,6 +68,10 @@
                 padding-left: $spacing5
             img
                 width: col(4,6)
+.block-gallery + .block-image,
+.block-image + .block-gallery
+    padding-top: 0
+    
 .block-posts--list
     @include in-page-without-sidebar
         @include media-breakpoint-up(desktop)
