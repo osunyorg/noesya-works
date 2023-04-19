@@ -1,3 +1,27 @@
+// Posts
+.posts__page 
+    .hero 
+        padding-top: 0
+        margin-left: -$grid-gutter
+        margin-right: -$grid-gutter
+        .content
+            flex-direction: column
+            height: 95vh
+            justify-content: flex-end
+            max-height: $hero-height-desktop
+            overflow: hidden
+            position: relative
+            figure
+                height: 100%
+                object-fit: cover
+                position: absolute
+                z-index: 1
+                width: 100%
+            h1
+                color: white
+                margin: $grid-gutter
+                z-index: 2
+    
 // Blocks
 .block-image, 
 .block-gallery
