@@ -13,3 +13,45 @@ params:
   seo:
     title:
       separator: "•"
+  image_sizes:
+    design_system:
+      lightbox:
+        mobile:   1920
+        tablet:   1920
+        desktop:  1920
+      hero:
+        mobile:   400
+        tablet:   1024
+        desktop:  1920
+    blocks:
+      call_to_action:
+        mobile:   400
+        tablet:   1024
+        desktop:  1920
+      image:
+        mobile:   480
+        tablet:   768
+        desktop:  960
+      gallery:
+        carousel:
+          mobile:   400
+          tablet:   1024
+          desktop:  1920
+        grid:
+          mobile:   400
+          tablet:   400
+          desktop:  400
+    sections:
+      posts:
+        hero:
+          mobile:   400
+          tablet:   1024
+          desktop:  1920
+        hero_single:
+          mobile:   400
+          tablet:   1024
+          desktop:  1920
+        item:
+          mobile:   350
+          tablet:   450
+          desktop:  900
