@@ -59,6 +59,10 @@
                         font-size: $project-navigation-title
                     + span
                         color: $color-text-alt
+    .block .top h2
+        font-family: $body-font-family
+        font-style: italic
+        text-transform: initial
 
 // Blocks
 .block-image, 
@@ -118,7 +122,23 @@
 .block-gallery + .block-image,
 .block-image + .block-gallery
     padding-top: 0
-    
+.block-organization_chart
+    .top h2
+        text-align: center
+    @include media-breakpoint-up(desktop)
+        @include in-page-without-sidebar
+            .persons
+                @include grid(3, desktop)
+            .avatar
+                width: col(3,8)
+                margin-bottom: 0
+            .description + .avatar
+                margin-right: $spacing1
+    .person
+        align-items: center
+        flex-direction: row
+        .description
+            text-align: left
 .block-posts--list
     @include in-page-without-sidebar
         @include media-breakpoint-up(desktop)
