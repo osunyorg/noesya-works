@@ -14,22 +14,36 @@
     main
         overflow: hidden
     .hero 
+        height: 75vh
+        margin-bottom: 0
+        max-height: $hero-height-desktop
+        min-height: unset
+        overflow: hidden
+        padding-bottom: 0
         padding-top: 0
-        margin-left: -$grid-gutter
-        margin-right: -$grid-gutter
+        position: relative
+        .container, .content
+            height: 100%
+        .container
+            margin: 0
+            max-width: unset
+            padding: 0
         .content
-            flex-direction: column
-            height: 75vh
-            justify-content: flex-end
-            max-height: $hero-height-desktop
-            overflow: hidden
-            position: relative
+            align-items: flex-end
+            display: flex
+            justify-content: space-between
+            padding: $grid-gutter
+            max-width: $grid-max-width
+            margin-left: auto
+            margin-right: auto
             figure
                 height: 100%
                 object-fit: cover
                 position: absolute
-                z-index: 1
+                top: 0
+                left: 0
                 width: 100%
+                z-index: 1
                 a, picture
                     display: block
                     height: 100%
@@ -38,7 +52,6 @@
                     object-fit: cover
             h1
                 color: white
-                margin: $grid-gutter
                 z-index: 2
     .projects-navigation
         align-items: center
