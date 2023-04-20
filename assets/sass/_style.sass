@@ -47,6 +47,10 @@ header#document-header
                 left: 0
                 width: 100%
                 z-index: 1
+                &::after
+                    bottom: 0
+                    content: ''
+
                 a, picture
                     display: block
                     height: 100%
@@ -144,14 +148,15 @@ header#document-header
             @include grid(2, desktop)
             @include media-breakpoint-up(desktop)
                 grid-gap: $spacing3
-        figure
-            padding-right: $spacing3
-            padding-left: $spacing3
-            @include media-breakpoint-up(xxl)
-                padding-right: $spacing5
-                padding-left: $spacing5
-            img
-                width: col(4,6)
+                figure
+                    padding-right: $spacing3
+                    padding-left: $spacing3
+                    img
+                        width: col(4,6)
+            @include media-breakpoint-down(desktop)
+                figure
+                    padding-bottom: 0
+                    padding-top: 0
     .gallery
         align-items: inherit
         figcaption
