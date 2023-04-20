@@ -139,6 +139,35 @@
         flex-direction: row
         .description
             text-align: left
+.block-call_to_action 
+    position: relative
+    overflow: hidden
+    @include in-page-without-sidebar
+        .call_to_action--with-image
+            display: flex
+            justify-content: center
+            @include media-breakpoint-down(desktop)
+                padding-top: $spacing3
+            picture
+                bottom: 0
+                left: 0
+                position: absolute
+                top: 0
+                right: 0
+                margin-bottom: 0
+                img
+                    height: 100%
+                    object-fit: cover
+        .actions 
+            position: relative
+            margin-top: 0
+            z-index: 2
+            a
+                @include icon(arrow, after)
+                margin: 0
+                &::after
+                    margin-left: $spacing0
+
 .block-posts--list
     @include in-page-without-sidebar
         @include media-breakpoint-up(desktop)
