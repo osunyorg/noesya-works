@@ -1,3 +1,7 @@
+header#document-header
+    nav
+        button[type="button"]
+            display: none
 // Posts
 .page__home 
     .hero
@@ -16,8 +20,6 @@
     .hero 
         height: 75vh
         margin-bottom: 0
-        max-height: $hero-height-desktop
-        min-height: $hero-height
         overflow: hidden
         padding-top: 0
         position: relative
@@ -56,13 +58,13 @@
                 flex: 1
                 z-index: 2
                 @include media-breakpoint-up(desktop)   
-                    align-items: center
+                    // align-items: center
                     display: flex 
                     justify-content: space-between
                     h1
                         font-size: $post-title-size
                         line-height: $post-title-line-height
-                        width: col(7)
+                        width: col(9)
                         + p
                             font-size: $post-date-size
                             line-height: $post-date-line-height
