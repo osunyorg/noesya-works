@@ -130,11 +130,9 @@ header#document-header
             display: block
             padding-bottom: $spacing4
             padding-top: $spacing4
-            a
-                margin: 0
-                width: 100%
             picture
                 margin: 0
+                width: 100%
                 img
                     margin: auto
                     max-height: unset
@@ -145,6 +143,7 @@ header#document-header
 .block-gallery 
     @include in-page-without-sidebar
         .gallery
+            align-items: inherit
             @include grid(2, desktop)
             @include media-breakpoint-up(desktop)
                 grid-gap: $spacing3
@@ -158,25 +157,21 @@ header#document-header
                     padding-bottom: 0
                     padding-top: 0
     .gallery
-        align-items: inherit
         figcaption
             font-size: 0
             opacity: 0
         figure.cover
             position: relative
-            a
+            picture
                 bottom: 0
                 left: 0
                 position: absolute
                 right: 0
                 top: 0
-                picture
+                img
                     height: 100%
-                    img
-                        height: 100%
-                        object-fit: cover
-                        width: 100%
-
+                    object-fit: cover
+                    width: 100%
 .block-gallery + .block-image,
 .block-image + .block-gallery
     padding-top: 0
