@@ -17,7 +17,7 @@
         height: 75vh
         margin-bottom: 0
         max-height: $hero-height-desktop
-        min-height: unset
+        min-height: $hero-height
         overflow: hidden
         padding-top: 0
         position: relative
@@ -69,20 +69,24 @@
                             line-height: $post-date-line-height
                 @include media-breakpoint-down(desktop)
                     margin: 0
-    .block-summary
-        @include media-breakpoint-up(desktop)
-            .block-content
-                display: flex
-                gap: $grid-gutter
-            .lead
-                width: col(8)
-                + div
+        .block-summary
+            @include media-breakpoint-up(desktop)
+                .block-content
                     display: flex
-                    justify-content: space-between
                     gap: $grid-gutter
-                    flex: 1
-                    picture
-                        width: col(1.5,4)
+                .lead
+                    width: col(8)
+                    + div
+                        display: flex
+                        justify-content: space-between
+                        gap: $grid-gutter
+                        flex: 1
+                        picture
+                            width: col(1.5,4)
+    .block
+        @include media-breakpoint-up(desktop)
+            padding-top: calc(#{$spacing4} - #{$spacing1})
+            padding-bottom: calc(#{$spacing4} - #{$spacing1})
     .projects-navigation
         align-items: center
         display: flex
