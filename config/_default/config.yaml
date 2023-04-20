@@ -3,6 +3,7 @@ paginate: 18
 enableRobotsTXT: true
 removePathAccents: true
 params:
+  ecosystem: works
   breadcrumb:
     position: none
   posts:
