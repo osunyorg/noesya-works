@@ -8,11 +8,32 @@
     {{ if .Date }}<meta itemprop="datePublished" content="{{ .Date.Format "2006-01-02T15:04" }}">{{ end }}
     {{ if .Params.summary }}<meta itemprop="abstract" content="{{ partial "PrepareText" .Params.summary }}">{{ end }}
     {{ if .Summary }}<meta itemprop="description" content="{{ partial "PrepareText" .Summary }}">{{ end }}
-
+ 
     {{ partial "posts/summary.html" (dict
         "context" .
         "block_wrapped" true
       ) }}
+
+    {{ with .Params.blocks }}
+      {{ $organization_blocks := where . "title" "[organisation]" }}
+      {{ with index $organization_blocks 0 }}
+        {{ with index .data.partners 0 }}
+          <div>
+            L'organisation<br>
+            {{ with (site.GetPage (printf "/organizations/%s" .slug )) }}
+              {{ if .Params.logo }}
+                {{- partial "commons/image.html"
+                  (dict
+                    "image"    .Params.logo
+                    "alt"      .Params.title
+                    "sizes"    site.Params.image_sizes.blocks.partners
+                  ) -}}
+              {{ end }}
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+    {{ end }}
 
     {{ partial "blocks/list.html" . }}
 
