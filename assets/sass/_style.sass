@@ -90,10 +90,14 @@ header#document-header nav button[type="button"]
                     flex: 1
                     picture
                         width: col(1.5,4)
-    .block
-        @include media-breakpoint-up(desktop)
+    @include media-breakpoint-up(desktop)
+        .block
             padding-top: calc(#{$spacing4} - #{$spacing1})
             padding-bottom: calc(#{$spacing4} - #{$spacing1})
+        .block-call_to_action
+            margin-top: calc(#{$spacing4} - #{$spacing0})
+        .block-organization_chart
+            padding-top: calc(#{$spacing3})
     .projects-navigation
         align-items: center
         display: flex
