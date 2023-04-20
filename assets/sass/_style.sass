@@ -51,6 +51,7 @@
                 img
                     height: 100%
                     object-fit: cover
+                    object-position: top
             
             hgroup
                 color: white
@@ -177,6 +178,12 @@
     position: relative
     overflow: hidden
     @include in-page-without-sidebar
+        .block-content
+            padding-top: $spacing4
+            padding-bottom: $spacing4
+            @include media-breakpoint-up(desktop)
+                padding-top: $spacing5
+                padding-bottom: $spacing5
         .call_to_action--with-image
             display: flex
             justify-content: center
@@ -192,10 +199,11 @@
                 img
                     height: 100%
                     object-fit: cover
-                    width: 100%
+                    object-position: top
         .actions 
-            position: relative
             margin-top: 0
+            position: relative
+            text-align: center
             z-index: 2
             a
                 @include icon(arrow, after)
