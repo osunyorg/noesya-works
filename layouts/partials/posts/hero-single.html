@@ -1,0 +1,61 @@
+{{- $sizes := site.Params.image_sizes.sections.posts.hero_single -}}
+{{- $image := .Params.image -}}
+{{- $title := .Title -}}
+
+{{- $direction := "" -}}
+{{- $breadcrumb_is_after_hero := eq site.Params.breadcrumb.position "after-hero"  -}}
+{{ if $image }}
+  {{- $direction = partial "GetImageDirection" $image -}}
+{{ end }}
+
+<header class="hero {{ if $image -}}hero--with-image hero--image-{{- $direction -}}{{- end }} {{ if $breadcrumb_is_after_hero -}} hero--no-margin {{- end }}">
+  <div class="container">
+    {{- if eq site.Params.breadcrumb.position "hero-start" -}}
+      {{- if .breadcrumb | default true -}}
+        {{ partial "header/breadcrumbs.html" .context }}
+      {{- end -}}
+    {{- end -}}
+    <div class="content">
+        <hgroup>
+          <h1>{{ partial "PrepareHTML" $title }}</h1>
+          <p>{{ .Date.Format "2006" }}</p>
+        </hgroup>
+      {{- if $image }}
+        <figure>
+          <a class="glightbox"
+            data-glightbox="type: image;{{ if $image.credit }}description: {{ partial "PrepareHTML" $image.credit }}{{ end }}"
+            href="{{ partial "GetLightboxUrl" $image }}"
+            title="{{- i18n "commons.lightbox.link.title" -}}"
+            >
+            {{ partial "commons/image.html"
+              (dict
+                "image"    $image
+                "sizes"    ( $sizes | default site.Params.image_sizes.design_system.hero )
+                "lazy"     false
+              ) }}
+            </a>
+            {{ if partial "GetTextFromHTML" $image.credit }}
+              <figcaption tabindex="0">
+                <p>
+                  {{- partial "GetTextFromHTML" $image.credit -}}
+                </p>
+              </figcaption>
+            {{ end }}
+        </figure>
+      {{ end -}}
+    </div>
+    {{- if eq site.Params.breadcrumb.position "hero-end" -}}
+      {{- if .breadcrumb | default true -}}
+        {{ partial "header/breadcrumbs.html" .context }}
+      {{- end -}}
+    {{- end -}}
+  </div>
+</header>
+
+{{- if $breadcrumb_is_after_hero -}}
+  {{- if .breadcrumb | default true -}}
+    <div class="container breadcrumb-container">
+      {{ partial "header/breadcrumbs.html" .context }}
+    </div>
+  {{- end -}}
+{{- end -}}

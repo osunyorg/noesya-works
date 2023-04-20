@@ -51,14 +51,25 @@
                 img
                     height: 100%
                     object-fit: cover
-            h1
+            
+            hgroup
                 color: white
+                flex: 1
                 z-index: 2
-                @include media-breakpoint-up(desktop)
-                    font-size: $post-title-size
-                    line-height: $post-title-line-height
+                @include media-breakpoint-up(desktop)   
+                    align-items: center
+                    display: flex 
+                    justify-content: space-between
+                    h1
+                        font-size: $post-title-size
+                        line-height: $post-title-line-height
+                        width: col(7)
+                        + p
+                            font-size: $post-date-size
+                            line-height: $post-date-line-height
                 @include media-breakpoint-down(desktop)
-                    margin: 0
+                    h1
+                        margin: 0
     .projects-navigation
         align-items: center
         display: flex
@@ -83,7 +94,7 @@
                         font-size: $project-navigation-title
                     + span
                         color: $color-text-alt
-    .block .top h2
+    .block:not(.block-chapter) .top h2
         font-family: $body-font-family
         font-style: italic
         text-transform: initial
@@ -191,7 +202,6 @@
                 margin: 0
                 &::after
                     margin-left: $spacing0
-
 .block-posts--list
     @include in-page-without-sidebar
         @include media-breakpoint-up(desktop)
