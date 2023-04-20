@@ -1,7 +1,5 @@
-header#document-header
-    nav
-        button[type="button"]
-            display: none
+header#document-header nav button[type="button"]
+    display: none
 // Posts
 .page__home 
     main
@@ -10,11 +8,15 @@ header#document-header
         min-height: unset
 .posts__page 
     header#document-header 
-        a.logo img 
-            transition: filter .3s ease
+        a.logo 
+            transition: color .3s ease
+            img 
+                transition: filter .3s ease
         &:not(.is-sticky)
-            a.logo img
-                filter: invert(1)
+            a.logo 
+                color: white
+                img
+                    filter: invert(1)
     main
         overflow: hidden
     .hero 
