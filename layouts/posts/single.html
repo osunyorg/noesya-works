@@ -9,31 +9,39 @@
     {{ if .Params.summary }}<meta itemprop="abstract" content="{{ partial "PrepareText" .Params.summary }}">{{ end }}
     {{ if .Summary }}<meta itemprop="description" content="{{ partial "PrepareText" .Summary }}">{{ end }}
  
-    {{ partial "posts/summary.html" (dict
-        "context" .
-        "block_wrapped" true
-      ) }}
+    <section class="block block-summary">
+      <div class="container">
+        <div class="block-content">
+          {{ partial "posts/summary.html" (dict
+            "context" .
+            "block_wrapped" false
+          ) }}
 
-    {{ with .Params.blocks }}
-      {{ $organization_blocks := where . "title" "[organisation]" }}
-      {{ with index $organization_blocks 0 }}
-        {{ with index .data.partners 0 }}
-          <div>
-            L'organisation<br>
-            {{ with (site.GetPage (printf "/organizations/%s" .slug )) }}
-              {{ if .Params.logo }}
-                {{- partial "commons/image.html"
-                  (dict
-                    "image"    .Params.logo
-                    "alt"      .Params.title
-                    "sizes"    site.Params.image_sizes.blocks.partners
-                  ) -}}
+          {{ with .Params.blocks }}
+            {{ $organization_blocks := where . "title" "[organisation]" }}
+            {{ with index $organization_blocks 0 }}
+              {{ with index .data.partners 0 }}
+                <div>
+                  <div class="top">
+                    <h2>L'organisation</h2>
+                  </div>
+                  {{ with (site.GetPage (printf "/organizations/%s" .slug )) }}
+                    {{ if .Params.logo }}
+                      {{- partial "commons/image.html"
+                        (dict
+                          "image"    .Params.logo
+                          "alt"      .Params.title
+                          "sizes"    site.Params.image_sizes.blocks.partners
+                        ) -}}
+                    {{ end }}
+                  {{ end }}
+                </div>
               {{ end }}
             {{ end }}
-          </div>
-        {{ end }}
-      {{ end }}
-    {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
 
     {{ partial "blocks/list.html" . }}
 
