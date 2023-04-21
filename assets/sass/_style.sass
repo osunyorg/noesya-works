@@ -139,12 +139,16 @@ header#document-header nav button[type="button"]
 // Blocks
 .block-image, 
 .block-gallery
+    figcaption
+        font-size: 0
+        opacity: 0
+        margin: 0
     @include in-page-without-sidebar
         .block-content figure
             background: $color-background-alt
             display: block
-            padding-bottom: $spacing2
-            padding-top: $spacing2
+            padding-bottom: half($grid-gutter-sm)
+            padding-top: half($grid-gutter-sm)
             picture
                 margin: 0
                 width: 100%
@@ -171,9 +175,6 @@ header#document-header nav button[type="button"]
         .gallery
             @include grid(2, desktop)
             align-items: inherit
-            figcaption
-                font-size: 0
-                opacity: 0
             @include media-breakpoint-up(desktop)
                 figure.cover
                     position: relative
