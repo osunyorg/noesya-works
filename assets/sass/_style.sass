@@ -173,25 +173,32 @@ header#document-header nav button[type="button"]
                 figure:not(.cover) picture
                     width: col(2.85,6)
             @include media-breakpoint-down(desktop)
+                display: block
                 figure
+                    background: none
                     padding-bottom: 0
                     padding-top: 0
+                    + figure
+                        margin-top: $spacing2
     .gallery
         figcaption
             font-size: 0
             opacity: 0
-        figure.cover
-            position: relative
-            picture
-                bottom: 0
-                left: 0
-                position: absolute
-                right: 0
-                top: 0
-                img
-                    height: 100%
-                    object-fit: cover
-                    width: 100%
+        @include media-breakpoint-up(desktop)
+            figure.cover
+                position: relative
+                picture
+                    bottom: 0
+                    left: 0
+                    position: absolute
+                    right: 0
+                    top: 0
+                    img
+                        height: 100%
+                        object-fit: cover
+                        width: 100%
+    @include media-breakpoint-down(desktop)
+        padding-bottom: 0
                     
 .block-gallery + .block-image,
 .block-image + .block-gallery
@@ -199,7 +206,6 @@ header#document-header nav button[type="button"]
 @include media-breakpoint-up(desktop)
     .block-image + .block-gallery
         margin-top: -54px
-
 .block-organization_chart
     .top h2
         text-align: center
