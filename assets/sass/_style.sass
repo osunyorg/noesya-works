@@ -82,6 +82,13 @@ header#document-header nav button[type="button"]
                     h1 + p
                         margin-top: $spacing0
     .block-summary
+        .lead + div
+            display: flex
+            justify-content: space-between
+            gap: $grid-gutter
+            flex: 1
+            picture
+                width: col(2,4)
         @include media-breakpoint-down(desktop)
             .lead + div
                 margin-top: $spacing3
@@ -91,13 +98,8 @@ header#document-header nav button[type="button"]
                 gap: $grid-gutter
             .lead
                 width: col(8)
-                + div
-                    display: flex
-                    justify-content: space-between
-                    gap: $grid-gutter
-                    flex: 1
-                    picture
-                        width: col(1.5,4)
+                + div picture
+                    width: col(1.5,4)
     @include media-breakpoint-up(desktop)
         .block
             padding-top: calc(#{$spacing4} - #{$spacing1})
