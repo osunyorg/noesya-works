@@ -244,6 +244,8 @@ header#document-header nav button[type="button"]
         .persons
             gap: calc(#{$spacing1} + #{$spacing0})
     @include media-breakpoint-up(desktop)
+        .top
+            margin-bottom: $spacing4
         @include in-page-without-sidebar
             .persons
                 @include grid(3, desktop)
