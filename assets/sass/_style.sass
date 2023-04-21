@@ -264,6 +264,16 @@ header#document-header nav button[type="button"]
         background: none
     h3
         font-size: 0
+    .organizations
+        display: flex
+        justify-content: center
+        column-gap: $grid-gutter
+        flex-wrap: wrap
+        row-gap: half($grid-gutter)
+        .organization
+            width: col(6)
+            @include media-breakpoint-up(desktop)
+                width: col(2)
 
 .block-call_to_action 
     position: relative
