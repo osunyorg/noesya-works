@@ -237,11 +237,12 @@ header#document-header nav button[type="button"]
 .block-partners
     .top h2
         text-align: center
+.block-organization_chart
     .avatar
         width: col(3,8)
     @include media-breakpoint-down(desktop)
         .persons
-            gap: $spacing2
+            gap: calc(#{$spacing1} + #{$spacing0})
     @include media-breakpoint-up(desktop)
         @include in-page-without-sidebar
             .persons
