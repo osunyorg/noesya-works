@@ -37,10 +37,12 @@ header#document-header nav button[type="button"]
             align-items: flex-end
             display: flex
             justify-content: space-between
-            padding: $grid-gutter
-            max-width: $grid-max-width
-            margin-left: auto
-            margin-right: auto
+            padding: $grid-gutter-sm half($grid-gutter-sm)
+            @include media-breakpoint-up(desktop)
+                padding: $grid-gutter
+                max-width: $grid-max-width
+                margin-left: auto
+                margin-right: auto
             figure
                 height: 100%
                 object-fit: cover
@@ -74,7 +76,12 @@ header#document-header nav button[type="button"]
                             line-height: $post-date-line-height
                 @include media-breakpoint-down(desktop)
                     margin: 0
+                    h1 + p
+                        margin-top: $spacing0
     .block-summary
+        @include media-breakpoint-down(desktop)
+            .lead + div
+                margin-top: $spacing3
         @include media-breakpoint-up(desktop)
             .block-content
                 display: flex
@@ -114,7 +121,6 @@ header#document-header nav button[type="button"]
                     font-style: italic
                 h3
                     @include h1
-                    font-size: $project-navigation-title
                     margin: $spacing3 0 $spacing0
                     @include media-breakpoint-up(desktop)
                         font-size: $project-navigation-title
