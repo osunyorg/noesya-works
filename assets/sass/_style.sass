@@ -148,16 +148,19 @@ header#document-header nav button[type="button"]
             picture
                 margin: 0
                 width: 100%
-                img
-                    margin: auto
-                    max-height: unset
             @include media-breakpoint-up(desktop)
                 padding-bottom: $spacing4
                 padding-top: $spacing4
+                picture img
+                    margin: auto
+                    max-height: unset
 .block-image 
     @include in-page-without-sidebar
         figure img
-            width: col(10)
+            margin-left: half($grid-gutter-sm)
+            margin-right: half($grid-gutter-sm)
+            width: calc(100% - #{$grid-gutter-sm})
+
             @include media-breakpoint-up(desktop)
                 width: col(8)
     @include media-breakpoint-down(desktop)
@@ -211,6 +214,7 @@ header#document-header nav button[type="button"]
 @include media-breakpoint-up(desktop)
     .block-image + .block-gallery
         margin-top: -54px
+
 .block-organization_chart
     .top h2
         text-align: center
