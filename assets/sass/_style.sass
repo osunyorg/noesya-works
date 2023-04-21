@@ -214,6 +214,11 @@ header#document-header nav button[type="button"]
 .block-organization_chart
     .top h2
         text-align: center
+    .avatar
+        width: col(3,8)
+    @include media-breakpoint-down(desktop)
+        .persons
+            gap: $spacing2
     @include media-breakpoint-up(desktop)
         @include in-page-without-sidebar
             .persons
