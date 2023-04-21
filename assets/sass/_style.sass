@@ -150,11 +150,13 @@ header#document-header nav button[type="button"]
             align-items: inherit
             @include grid(2, desktop)
             @include media-breakpoint-up(desktop)
-                figure
-                    // padding-right: $spacing3
-                    // padding-left: $spacing3
-                    img
-                        width: col(4,6)
+                figure:not(.cover) picture
+                    margin-left: auto
+                    margin-right: auto
+                    width: col(3,6)
+            @include media-breakpoint-up(xxl)
+                figure:not(.cover) picture
+                    width: col(3,5)
             @include media-breakpoint-down(desktop)
                 figure
                     padding-bottom: 0
