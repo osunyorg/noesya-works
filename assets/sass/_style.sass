@@ -50,9 +50,6 @@ header#document-header nav button[type="button"]
                 left: 0
                 width: 100%
                 z-index: 1
-                &::after
-                    bottom: 0
-                    content: ''
 
                 a, picture
                     display: block
@@ -153,10 +150,9 @@ header#document-header nav button[type="button"]
             align-items: inherit
             @include grid(2, desktop)
             @include media-breakpoint-up(desktop)
-                grid-gap: $spacing3
                 figure
-                    padding-right: $spacing3
-                    padding-left: $spacing3
+                    // padding-right: $spacing3
+                    // padding-left: $spacing3
                     img
                         width: col(4,6)
             @include media-breakpoint-down(desktop)
@@ -182,6 +178,10 @@ header#document-header nav button[type="button"]
 .block-gallery + .block-image,
 .block-image + .block-gallery
     padding-top: 0
+
+.block-image + .block-gallery
+    margin-top: -54px
+
 .block-organization_chart
     .top h2
         text-align: center
