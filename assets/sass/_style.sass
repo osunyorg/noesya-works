@@ -147,8 +147,6 @@ header#document-header nav button[type="button"]
         .block-content figure
             background: $color-background-alt
             display: block
-            padding-bottom: half($grid-gutter-sm)
-            padding-top: half($grid-gutter-sm)
             picture
                 margin: 0
                 width: 100%
@@ -165,16 +163,25 @@ header#document-header nav button[type="button"]
 .block-image 
     @include in-page-without-sidebar
         figure img
+            margin-bottom: 0
             margin-left: half($grid-gutter-sm)
             margin-right: half($grid-gutter-sm)
             width: calc(100% - #{$grid-gutter-sm})
             @include media-breakpoint-up(desktop)
                 width: col(8)
+            @include media-breakpoint-down(desktop)
+                padding-bottom: half($grid-gutter-sm)
+                padding-top: half($grid-gutter-sm)
 .block-gallery 
     @include in-page-without-sidebar
         .gallery
             @include grid(2, desktop)
             align-items: inherit
+            figure 
+                &::after
+                    display: none
+                img
+                    margin-bottom: 0
             @include media-breakpoint-up(desktop)
                 figure.cover
                     position: relative
@@ -201,20 +208,23 @@ header#document-header nav button[type="button"]
                 grid-gap: 0 !important
                 figure
                     padding-bottom: 0
+                    padding-top: 0
                     &.cover
                         padding-top: 0
                         picture 
                             height: 100%
                             img
                                 display: initial
-                                margin-bottom: 0
                                 height: 100%
-                    &:not(.cover) picture
-                        margin-left: auto
-                        margin-right: auto
-                        width: col(6,10)
-                    &:not(.cover) + figure:not(.cover)
-                        padding-top: 0
+                    &:not(.cover) 
+                        padding-bottom: $spacing3
+                        padding-top: $spacing3
+                        picture
+                            margin-left: $spacing3
+                            margin-right: $spacing3
+                            width: fit-content
+                        + figure:not(.cover)
+                            padding-top: 0
                     
 .block-gallery + .block-image,
 .block-image + .block-gallery
