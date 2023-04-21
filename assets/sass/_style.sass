@@ -138,18 +138,27 @@ header#document-header nav button[type="button"]
         .block-content figure
             background: $color-background-alt
             display: block
-            padding-bottom: $spacing4
-            padding-top: $spacing4
+            padding-bottom: $spacing2
+            padding-top: $spacing2
             picture
                 margin: 0
                 width: 100%
                 img
                     margin: auto
                     max-height: unset
+            @include media-breakpoint-up(desktop)
+                padding-bottom: $spacing4
+                padding-top: $spacing4
 .block-image 
     @include in-page-without-sidebar
         figure img
-            width: col(8)
+            width: col(10)
+            @include media-breakpoint-up(desktop)
+                width: col(8)
+    @include media-breakpoint-down(desktop)
+        .container
+            padding-left: 0
+            padding-right: 0
 .block-gallery 
     @include in-page-without-sidebar
         .gallery
