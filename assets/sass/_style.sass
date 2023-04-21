@@ -192,12 +192,13 @@ header#document-header nav button[type="button"]
                     height: 100%
                     object-fit: cover
                     width: 100%
+                    
 .block-gallery + .block-image,
 .block-image + .block-gallery
     padding-top: 0
-
-.block-image + .block-gallery
-    margin-top: -54px
+@include media-breakpoint-up(desktop)
+    .block-image + .block-gallery
+        margin-top: -54px
 
 .block-organization_chart
     .top h2
