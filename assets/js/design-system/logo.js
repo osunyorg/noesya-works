@@ -2,11 +2,12 @@ class Logo {
     constructor (selector) {
         this.element = document.querySelector(selector);
         this.hero = document.querySelector('.hero--with-image');
-        this.heroHeight = this.hero.offsetHeight;
 
         if (!this.hero) {
             return;
         }
+        
+        this.heroHeight = this.hero.offsetHeight;
         
         this.listen();
     }
