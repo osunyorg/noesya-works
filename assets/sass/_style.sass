@@ -16,8 +16,6 @@ header#document-header nav button[type="button"]
                 color: white
                 img
                     filter: invert(1)
-                &:focus-visible
-                    outline-color: white
     main
         overflow: hidden
     .hero 
@@ -276,9 +274,9 @@ header#document-header nav button[type="button"]
             @include media-breakpoint-up(desktop)
                 width: col(2)
 
-.block-call_to_action 
-    position: relative
+.block-call_to_action
     overflow: hidden
+    position: relative
     @include in-page-without-sidebar
         .block-content
             padding-top: $spacing4
@@ -311,6 +309,8 @@ header#document-header nav button[type="button"]
             a
                 @include icon(arrow, after)
                 margin: 0
+                &:focus-visible
+                    outline-color: $block-call-to-action-color
                 &::after
                     margin-left: $spacing0
 .block-posts--list
