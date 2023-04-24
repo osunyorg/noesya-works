@@ -12,6 +12,8 @@ class Logo {
     }
 
     listen () {
+        this.element.classList.add('revert');
+
         window.addEventListener('resize', this.resize.bind(this));
 
         ['scroll'].forEach(event => {
