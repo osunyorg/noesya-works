@@ -12,9 +12,15 @@ class Logo {
     }
 
     listen () {
+        window.addEventListener('resize', this.resize.bind(this));
+
         ['scroll'].forEach(event => {
             window.addEventListener(event, this.onScroll.bind(this));
         });
+    }
+
+    resize () {
+        this.heroHeight = this.hero.offsetHeight;
     }
 
     onScroll () {
