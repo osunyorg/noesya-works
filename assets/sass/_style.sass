@@ -139,9 +139,12 @@ header#document-header nav button[type="button"]
 .block-image, 
 .block-gallery
     figcaption
-        font-size: 0
-        opacity: 0
-        margin: 0
+        bottom: 0
+        right: 0
+        position: absolute
+        transform: translateY(100%)
+        span
+            font-size: 0
     @include in-page-without-sidebar
         .block-content figure
             background: $color-background-alt
@@ -332,3 +335,13 @@ header#document-header nav button[type="button"]
                 &:hover
                     .media
                         opacity: 1
+
+@media (prefers-color-scheme: dark)
+    .block-image, 
+    .block-gallery
+        @include in-page-without-sidebar
+            .block-content figure
+                background: $color-background-alt-dark
+    .posts__page 
+        .projects-navigation ul a h3 + span
+                color: $color-text-alt-dark
