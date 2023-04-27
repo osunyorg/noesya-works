@@ -84,10 +84,12 @@ header#document-header nav button[type="button"]
         .lead + div
             display: flex
             justify-content: space-between
-            gap: $grid-gutter
             flex: 1
+            gap: $grid-gutter
+            margin-top: 4px
             picture
                 width: col(2,4)
+                margin-top: 6px
         @include media-breakpoint-down(desktop)
             .lead + div
                 margin-top: $spacing3
