@@ -142,11 +142,10 @@ header#document-header nav button[type="button"]
 .block-gallery
     figcaption
         bottom: 0
-        right: 0
+        font-size: 0
         position: absolute
         transform: translateY(100%)
-        span
-            font-size: 0
+        right: 0
     @include in-page-without-sidebar
         .block-content figure
             background: $color-background-alt
@@ -160,6 +159,8 @@ header#document-header nav button[type="button"]
                 picture img
                     margin: auto
                     max-height: unset
+                figcaption
+                    font-size: 0
     @include media-breakpoint-down(desktop)
         .container
             padding-left: 0
