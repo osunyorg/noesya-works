@@ -282,19 +282,31 @@ header#document-header nav button[type="button"]
             @include media-breakpoint-up(desktop)
                 width: col(2)
 
-.block-chapter.block-credits .text
-    @include in-page-with-or-without-sidebar
-        display: block
-        text-align: center
-        .top, 
-        .rich-text
-            width: 100%
-        .top
-            margin-bottom: $spacing4
-        p + p 
-            margin-top: $spacing0
-        @include media-breakpoint-down(desktop)
-            margin-bottom: $spacing3
+.block-chapter 
+    .chapter
+        @include in-page-with-or-without-sidebar
+            @include media-breakpoint-up(desktop)
+                .text
+                    display: flex
+                    width: 100%
+                    gap: $grid-gutter
+                    .top 
+                        width: col(5)
+                        + * 
+                            width: col(7)
+    &.block-credits .text
+        @include in-page-with-or-without-sidebar
+            display: block
+            text-align: center
+            .top, 
+            .rich-text
+                width: 100%
+            .top
+                margin-bottom: $spacing4
+            p + p 
+                margin-top: $spacing0
+            @include media-breakpoint-down(desktop)
+                margin-bottom: $spacing3
 
 .block-call_to_action
     overflow: hidden
