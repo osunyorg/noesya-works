@@ -132,7 +132,9 @@ header#document-header nav button[type="button"]
                         font-size: $project-navigation-title
                     + span
                         color: $color-text-alt
-    .block:not(.block-chapter) .top h2
+    .block:not(.block-chapter) .top h2,
+    .block-chapter.block-credits h2
+        @include h5
         font-family: $body-font-family
         font-style: italic
         text-transform: initial
@@ -279,6 +281,18 @@ header#document-header nav button[type="button"]
             width: col(6)
             @include media-breakpoint-up(desktop)
                 width: col(2)
+
+.block-chapter.block-credits .text
+    @include in-page-with-or-without-sidebar
+        display: block
+        text-align: center
+        .top, 
+        .rich-text
+            width: 100%
+        .top
+            margin-bottom: $spacing4
+        p + p 
+            margin-top: $spacing1
 
 .block-call_to_action
     overflow: hidden
