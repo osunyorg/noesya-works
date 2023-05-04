@@ -292,7 +292,9 @@ header#document-header nav button[type="button"]
         .top
             margin-bottom: $spacing4
         p + p 
-            margin-top: $spacing1
+            margin-top: $spacing0
+        @include media-breakpoint-down(desktop)
+            margin-bottom: $spacing3
 
 .block-call_to_action
     overflow: hidden
