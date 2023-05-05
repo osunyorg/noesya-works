@@ -133,7 +133,7 @@ header#document-header nav button[type="button"]
                     + span
                         color: $color-text-alt
     .block:not(.block-chapter) .top h2,
-    .block-chapter.block-credits h2
+    .block-chapter.block-chapter--alt_background h2
         @include h5
         font-family: $body-font-family
         font-style: italic
@@ -294,19 +294,21 @@ header#document-header nav button[type="button"]
                         width: col(5)
                         + * 
                             width: col(7)
-    &.block-credits .text
-        @include in-page-with-or-without-sidebar
-            display: block
-            text-align: center
-            .top, 
-            .rich-text
-                width: 100%
-            .top
-                margin-bottom: $spacing4
-            p + p 
-                margin-top: $spacing0
-            @include media-breakpoint-down(desktop)
-                margin-bottom: $spacing3
+    &.block-chapter--alt_background 
+        background: none
+        .text
+            @include in-page-with-or-without-sidebar
+                display: block
+                text-align: center
+                .top, 
+                .rich-text
+                    width: 100%
+                .top
+                    margin-bottom: $spacing4
+                p + p 
+                    margin-top: $spacing0
+                @include media-breakpoint-down(desktop)
+                    margin-bottom: $spacing3
 
 .block-call_to_action
     overflow: hidden
