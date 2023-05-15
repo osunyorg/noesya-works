@@ -65,6 +65,8 @@ header#document-header
                 img
                     height: 100%
                     object-fit: cover
+                figcaption
+                    display: none
             hgroup
                 color: white
                 flex: 1
@@ -346,10 +348,13 @@ header#document-header
             text-align: center
             z-index: 2
             a
+                @include hover-translate-icon
                 @include icon(arrow, after)
+                display: flex
+                align-items: center
                 margin: 0
                 &:focus-visible
-                    outline-color: $block-call-to-action-color
+                    outline-color: $block-call-to-action-button-hover-background
                 &::after
                     margin-left: $spacing0
 .block-posts--list
