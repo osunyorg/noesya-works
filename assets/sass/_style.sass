@@ -1,3 +1,29 @@
+// Keyframes
+@keyframes nav-hover-in
+    0%
+        left: 0
+        right: auto
+        width: 0%
+    99%
+        left: 0
+        right: auto
+    100%
+        right: 0
+        left: auto
+        width: 100%
+@keyframes nav-hover-out
+    0%
+        right: 0
+        left: auto
+        width: 100%
+    99%
+        left: auto
+        right: 0
+    100%
+        left: 0
+        right: auto
+        width: 0%
+
 header#document-header 
     nav button[type="button"]
         display: none
@@ -58,7 +84,6 @@ header#document-header
                 right: 0
                 width: 100%
                 z-index: 1
-
                 a, picture
                     display: block
                     height: 100%
@@ -124,12 +149,32 @@ header#document-header
             list-style: none
             text-align: center
             a
-                display: flex
-                flex-direction: column
-                text-decoration: none
+                align-items: center
+                .navigation, &
+                    display: flex
+                    flex-direction: column
+                    text-decoration: none
                 .navigation
+                    position: relative
                     font-family: $body-font-family
                     font-style: italic
+                    &::after
+                        background: black
+                        bottom: -4px
+                        content: ""
+                        display: flex
+                        height: 1px
+                        position: absolute
+                        right: 0
+                        left: auto
+                        transform: width .3s ease
+                        width: 0%
+                        -webkit-animation: nav-hover-out 1s forwards
+                        animation: nav-hover-out 1s forwards
+                &:hover .navigation::after
+                    -webkit-animation: nav-hover-in 1s forwards
+                    animation: nav-hover-in 1s forwards
+                    
                 h3
                     @include h1
                     margin: $spacing3 0 $spacing0
