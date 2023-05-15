@@ -172,6 +172,8 @@ header#document-header
         .container
             padding-left: 0
             padding-right: 0
+        figure figcaption
+            font-size: 0
 .block-image 
     @include in-page-without-sidebar
         figure img
@@ -392,3 +394,8 @@ header#document-header
     .block-chapter--alt_background
         .top h2, p
             color: white
+    .organizations .organization .media,
+    .organizations__page .document-content .logo
+        background: none
+        picture
+            background: none
