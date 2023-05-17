@@ -1,3 +1,29 @@
+// Keyframes
+@keyframes nav-hover-in
+    0%
+        left: 0
+        right: auto
+        width: 0%
+    99%
+        left: 0
+        right: auto
+    100%
+        right: 0
+        left: auto
+        width: 100%
+@keyframes nav-hover-out
+    0%
+        right: 0
+        left: auto
+        width: 100%
+    99%
+        left: auto
+        right: 0
+    100%
+        left: 0
+        right: auto
+        width: 0%
+
 header#document-header 
     nav button[type="button"]
         display: none
@@ -58,13 +84,14 @@ header#document-header
                 right: 0
                 width: 100%
                 z-index: 1
-
                 a, picture
                     display: block
                     height: 100%
                 img
                     height: 100%
                     object-fit: cover
+                figcaption
+                    display: none
             hgroup
                 color: white
                 flex: 1
@@ -135,12 +162,32 @@ header#document-header
             list-style: none
             text-align: center
             a
-                display: flex
-                flex-direction: column
-                text-decoration: none
+                align-items: center
+                .navigation, &
+                    display: flex
+                    flex-direction: column
+                    text-decoration: none
                 .navigation
+                    position: relative
                     font-family: $body-font-family
                     font-style: italic
+                    &::after
+                        background: black
+                        bottom: -4px
+                        content: ""
+                        display: flex
+                        height: 1px
+                        position: absolute
+                        right: 0
+                        left: auto
+                        transform: width .3s ease
+                        width: 0%
+                        -webkit-animation: nav-hover-out 1s forwards
+                        animation: nav-hover-out 1s forwards
+                &:hover .navigation::after
+                    -webkit-animation: nav-hover-in 1s forwards
+                    animation: nav-hover-in 1s forwards
+                    
                 h3
                     @include h1
                     margin: $spacing3 0 $spacing0
@@ -198,7 +245,7 @@ header#document-header
                 padding-bottom: half($grid-gutter-sm)
                 padding-top: half($grid-gutter-sm)
 .block-gallery 
-    @include in-page-without-sidebar
+    @include in-page-with-or-without-sidebar
         .gallery
             @include grid(2, desktop)
             align-items: inherit
@@ -229,8 +276,7 @@ header#document-header
                 figure:not(.cover) picture
                     width: col(2.85,6)
             @include media-breakpoint-down(desktop)
-                @include grid(1)
-                grid-gap: 0 !important
+                display: block
                 figure
                     padding-bottom: 0
                     padding-top: 0
@@ -245,8 +291,8 @@ header#document-header
                         padding-bottom: $spacing3
                         padding-top: $spacing3
                         picture
-                            margin-left: $spacing3
-                            margin-right: $spacing3
+                            margin-left: auto
+                            margin-right: auto
                             width: fit-content
                         + figure:not(.cover)
                             padding-top: 0
@@ -262,16 +308,17 @@ header#document-header
 .block-partners
     .top h2
         text-align: center
+
 .block-organization_chart
-    .avatar
-        width: col(3,8)
     @include media-breakpoint-down(desktop)
         .persons
             gap: calc(#{$spacing1} + #{$spacing0})
     @include media-breakpoint-up(desktop)
         .top
             margin-bottom: $spacing4
-        @include in-page-without-sidebar
+        .avatar
+            width: col(3,8)
+        @include in-page-with-or-without-sidebar
             .persons
                 @include grid(3, desktop)
             .avatar
@@ -281,9 +328,10 @@ header#document-header
                 margin-right: $spacing1
     .person
         align-items: center
-        flex-direction: row
+        flex-direction: row 
         .description
             text-align: left
+
 .block-partners
     .media
         background: none
@@ -361,10 +409,13 @@ header#document-header
             text-align: center
             z-index: 2
             a
+                @include hover-translate-icon
                 @include icon(arrow, after)
+                display: flex
+                align-items: center
                 margin: 0
                 &:focus-visible
-                    outline-color: $block-call-to-action-color
+                    outline-color: $block-call-to-action-button-hover-background
                 &::after
                     margin-left: $spacing0
 .block-posts--list
@@ -399,6 +450,8 @@ header#document-header
         .lead + div picture,
         .block-partners picture
             filter: invert(1) grayscale(1)
+        .projects-navigation ul a .navigation::after
+            background: white
     .block-chapter--alt_background
         .top h2, p
             color: white
