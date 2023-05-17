@@ -232,7 +232,7 @@ header#document-header
                 padding-bottom: half($grid-gutter-sm)
                 padding-top: half($grid-gutter-sm)
 .block-gallery 
-    @include in-page-without-sidebar
+    @include in-page-with-or-without-sidebar
         .gallery
             @include grid(2, desktop)
             align-items: inherit
@@ -263,8 +263,7 @@ header#document-header
                 figure:not(.cover) picture
                     width: col(2.85,6)
             @include media-breakpoint-down(desktop)
-                @include grid(1)
-                grid-gap: 0 !important
+                display: block
                 figure
                     padding-bottom: 0
                     padding-top: 0
@@ -279,8 +278,8 @@ header#document-header
                         padding-bottom: $spacing3
                         padding-top: $spacing3
                         picture
-                            margin-left: $spacing3
-                            margin-right: $spacing3
+                            margin-left: auto
+                            margin-right: auto
                             width: fit-content
                         + figure:not(.cover)
                             padding-top: 0
@@ -296,16 +295,17 @@ header#document-header
 .block-partners
     .top h2
         text-align: center
+
 .block-organization_chart
-    .avatar
-        width: col(3,8)
     @include media-breakpoint-down(desktop)
         .persons
             gap: calc(#{$spacing1} + #{$spacing0})
     @include media-breakpoint-up(desktop)
         .top
             margin-bottom: $spacing4
-        @include in-page-without-sidebar
+        .avatar
+            width: col(3,8)
+        @include in-page-with-or-without-sidebar
             .persons
                 @include grid(3, desktop)
             .avatar
@@ -315,9 +315,10 @@ header#document-header
                 margin-right: $spacing1
     .person
         align-items: center
-        flex-direction: row
+        flex-direction: row 
         .description
             text-align: left
+
 .block-partners
     .media
         background: none
