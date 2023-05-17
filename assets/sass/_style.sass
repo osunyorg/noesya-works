@@ -83,6 +83,12 @@ header#document-header
                     margin: 0
                     h1 + p
                         margin-top: $spacing0
+    .block-features ul
+        @include media-breakpoint-up(md)
+            @include grid(3)
+        @include media-breakpoint-between(sm, md)
+            li
+                max-width: col(9)
     .block-summary
         .lead + div
             display: flex
@@ -90,12 +96,19 @@ header#document-header
             flex: 1
             gap: $grid-gutter
             margin-top: 4px
-            picture
-                width: col(2,4)
+            picture img
+                min-width: 100px
                 margin-top: 6px
+            @include media-breakpoint-down(sm)
+                display: block
+            @include media-breakpoint-down(md)
+                picture img
+                    max-width: 100px
         @include media-breakpoint-down(desktop)
             .lead + div
                 margin-top: $spacing3
+                picture 
+                    max-width: 120px
         @include media-breakpoint-up(desktop)
             .block-content
                 display: flex
