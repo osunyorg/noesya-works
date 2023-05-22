@@ -7,5 +7,3 @@ fr:
   languageName: Français
   permalinks:
     posts: /actualites/:year-:month-:day-:slug/
-    organizations: /organisations/:slug/
-    persons: /equipe/:slug/
