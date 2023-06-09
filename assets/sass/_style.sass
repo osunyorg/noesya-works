@@ -230,6 +230,7 @@ header#document-header
         .container
             padding-left: 0
             padding-right: 0
+        // Remove strange grey area at the bottom on mobile
         figure figcaption
             font-size: 0
 .block-image 
@@ -254,6 +255,11 @@ header#document-header
                     display: none
                 img
                     margin-bottom: 0
+                &.cover
+                    figcaption
+                        // TODO @alex en fait c'est pas ça qu'il faut faire, c'est virer les [full] avec Hugo
+                        // cf https://github.com/noesya/coop.noesya.works/issues/1
+                        display: none
             @include media-breakpoint-up(desktop)
                 figure.cover
                     position: relative
@@ -278,10 +284,9 @@ header#document-header
             @include media-breakpoint-down(desktop)
                 display: block
                 figure
-                    padding-bottom: 0
-                    padding-top: 0
+                    padding: $spacing3
                     &.cover
-                        padding-top: 0
+                        padding: 0 !important
                         picture 
                             height: 100%
                             img
@@ -296,10 +301,12 @@ header#document-header
                             width: fit-content
                         + figure:not(.cover)
                             padding-top: 0
-                    
+
 .block-gallery + .block-image,
 .block-image + .block-gallery
     padding-top: 0
+    @include media-breakpoint-down(desktop)
+    margin-top: -$spacing3
 @include media-breakpoint-up(desktop)
     .block-image + .block-gallery
         margin-top: -54px

@@ -12,7 +12,7 @@ class BlockGallery {
     listen () {
 
         this.items.forEach((item) => {
-          if (item.innerText.includes("full")) {
+          if (item.innerText.includes("[full]")) {
             item.setAttribute("aria-hidden", "true");
             item.classList.add("cover");
           } 
