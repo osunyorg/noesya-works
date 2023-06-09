@@ -230,9 +230,7 @@ header#document-header
         .container
             padding-left: 0
             padding-right: 0
-        // Remove strange grey area at the bottom on mobile
-        figure figcaption
-            font-size: 0
+
 .block-image 
     @include in-page-without-sidebar
         figure img
@@ -256,6 +254,8 @@ header#document-header
                 img
                     margin-bottom: 0
                 &.cover
+                    // Remove strange grey area at the bottom on mobile
+                    line-height: 0
                     figcaption
                         // TODO @alex en fait c'est pas ça qu'il faut faire, c'est virer les [full] avec Hugo
                         // cf https://github.com/noesya/coop.noesya.works/issues/1
