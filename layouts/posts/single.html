@@ -9,7 +9,7 @@
     {{ if .Params.summary }}<meta itemprop="abstract" content="{{ partial "PrepareText" .Params.summary }}">{{ end }}
     {{ if .Summary }}<meta itemprop="description" content="{{ partial "PrepareText" .Summary }}">{{ end }}
  
-    <section class="block block-summary">
+    <div class="block block-summary">
       <div class="container">
         <div class="block-content">
           {{ partial "posts/summary.html" (dict
@@ -23,7 +23,7 @@
               {{ with index .data.partners 0 }}
                 <div>
                   <div class="top">
-                    <h2>L'organisation</h2>
+                    <p class="block-title">L'organisation</p>
                   </div>
                   {{ with (site.GetPage (printf "/organizations/%s" .slug )) }}
                     {{ if .Params.logo }}
