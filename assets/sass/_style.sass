@@ -1,3 +1,10 @@
+// TODO: ceci est un quickfix, il faut repasser sur l'inté des blocks pour vérifier les alignements verticaux
+.block
+    margin-top: 0
+    margin-bottom: 0
+    padding-top: $spacing3
+    padding-bottom: $spacing3
+    
 // Keyframes
 @keyframes nav-hover-in
     0%
@@ -195,8 +202,8 @@ header#document-header
                         font-size: $project-navigation-title
                     + span
                         color: $color-text-alt
-    .block:not(.block-chapter) .top h2,
-    .block-chapter.block-chapter--alt_background h2
+    .block:not(.block-chapter) .top .block-title,
+    .block-chapter.block-chapter--alt_background .block-title
         @include h5
         font-family: $body-font-family
         font-style: italic
