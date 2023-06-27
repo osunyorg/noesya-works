@@ -313,8 +313,9 @@ header#document-header
 
 .block-organization_chart,
 .block-partners
-    .top h2
-        text-align: center
+    .top
+        .block-title
+            text-align: center
 
 .block-organization_chart
     @include media-breakpoint-down(desktop)
@@ -355,7 +356,11 @@ header#document-header
             @include media-breakpoint-up(desktop)
                 width: col(2)
 
-.block-chapter 
+.block-chapter
+    &--no_background 
+        .block-title
+            @include h2
+
     .chapter
         @include in-page-with-or-without-sidebar
             @include media-breakpoint-up(desktop)
@@ -367,6 +372,7 @@ header#document-header
                         width: col(5)
                         + * 
                             width: col(7)
+    &.block-chapter--alt_background 
     &.block-chapter--alt_background 
         background: none
         .text
