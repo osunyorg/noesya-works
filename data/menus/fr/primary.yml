@@ -1,4 +1,24 @@
 ---
 title: Menu principal
-items: []
+items:
+- title: Actualités
+  target: "/actualites/"
+  kind: page
+  children: []
+- title: Équipe
+  target: "/equipe/"
+  kind: page
+  children:
+  - title: Équipe éditoriale
+    target: "/equipe/equipe-editoriale/"
+    kind: page
+    children: []
+- title: Organisations
+  target: "/organisations/"
+  kind: page
+  children: []
+- title: Home alternative
+  target: "/home-alternative/"
+  kind: page
+  children: []
 
