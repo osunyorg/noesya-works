@@ -17,7 +17,7 @@
             "block_wrapped" false
           ) }}
 
-          {{ with .Params.blocks }}
+          {{ with .Params.contents }}
             {{ $organization_blocks := where . "title" "[organisation]" }}
             {{ with index $organization_blocks 0 }}
               {{ with index .data.partners 0 }}
@@ -43,7 +43,9 @@
       </div>
     </div>
 
-    {{ partial "blocks/list.html" . }}
+    {{ partial "contents/list.html" . }}
+
+    {{ partial "posts/after-contents.html" . }}
 
     {{ partial "posts/navigation.html" . }}
 
