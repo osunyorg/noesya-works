@@ -16,10 +16,12 @@
       {{- end -}}
     {{- end -}}
     <div class="content">
+      <div class="hero-text">
         <hgroup>
           <h1>{{ partial "PrepareHTML" $title }}</h1>
           <p>{{ .Date.Format "2006" }}</p>
         </hgroup>
+      </div>
       {{- if $image }}
         <figure>
           {{ if not site.Params.image_sizes.design_system.lightbox.disabled }}

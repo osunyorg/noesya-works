@@ -2,8 +2,8 @@
 .block
     margin-top: 0
     margin-bottom: 0
-    padding-top: $spacing3
-    padding-bottom: $spacing3
+    padding-top: $spacing-5
+    padding-bottom: $spacing-5
     
 // Keyframes
 @keyframes nav-hover-in
@@ -40,7 +40,7 @@ header#document-header
 // Posts
 .page__home 
     main
-        padding-bottom: $spacing5
+        padding-bottom: $spacing-7
     .hero
         min-height: unset
 
@@ -63,7 +63,7 @@ header#document-header
         padding-top: 0
         position: relative
         @include media-breakpoint-up(desktop)
-            padding-bottom: $spacing2
+            padding-bottom: $spacing-4
         .container, .content
             height: 100%
         .container
@@ -74,12 +74,15 @@ header#document-header
             align-items: flex-end
             display: flex
             justify-content: space-between
-            padding: $grid-gutter-sm half($grid-gutter-sm)
+            padding-left: $spacing-3
+            padding-right: $spacing-3
             @include media-breakpoint-up(desktop)
-                padding: $grid-gutter
-                max-width: $grid-max-width
+                padding: var(--grid-gutter)
+                max-width: var(--grid-max-width)
                 margin-left: auto
                 margin-right: auto
+            .hero-text
+                margin: $spacing-5 0
             figure
                 filter: brightness(70%)
                 height: 100%
@@ -100,36 +103,40 @@ header#document-header
                     object-fit: cover
                 figcaption
                     display: none
-            hgroup
-                color: white
-                flex: 1
+            .hero-text
+                position: relative
                 z-index: 2
-                @include media-breakpoint-up(desktop)   
-                    display: flex 
-                    justify-content: space-between
-                    h1
-                        font-size: $post-title-size
-                        line-height: $post-title-line-height
-                        width: col(9)
-                        + p
-                            font-size: $post-date-size
-                            line-height: $post-date-line-height
-                @include media-breakpoint-down(desktop)
-                    margin: 0
-                    h1 + p
-                        margin-top: $spacing0
+                width: 100%
+                hgroup
+                    color: white
+                    flex: 1
+                    z-index: 2
+                    @include media-breakpoint-up(desktop)   
+                        display: flex 
+                        justify-content: space-between
+                        h1
+                            font-size: $post-title-size
+                            line-height: $post-title-line-height
+                            width: columns(9)
+                            + p
+                                font-size: $post-date-size
+                                line-height: $post-date-line-height
+                    @include media-breakpoint-down(desktop)
+                        margin: 0
+                        h1 + p
+                            margin-top: $spacing-2
     .block-features ul
         @include media-breakpoint-up(md)
             @include grid(3)
         @include media-breakpoint-between(sm, md)
             li
-                max-width: col(9)
+                max-width: columns(9)
     .block-summary
         .lead + div
             display: flex
             justify-content: space-between
             flex: 1
-            gap: $grid-gutter
+            gap: var(--grid-gutter)
             margin-top: 4px
             picture img
                 min-width: 100px
@@ -141,25 +148,25 @@ header#document-header
                     max-width: 100px
         @include media-breakpoint-down(desktop)
             .lead + div
-                margin-top: $spacing3
+                margin-top: $spacing-5
                 picture 
                     max-width: 120px
         @include media-breakpoint-up(desktop)
             .block-content
                 display: flex
-                gap: $grid-gutter
+                gap: var(--grid-gutter)
             .lead
-                width: col(8)
+                width: columns(8)
                 + div picture
-                    width: col(1.5,4)
+                    width: columns(1.5) // TODO CHECK
     @include media-breakpoint-up(desktop)
         .block
-            padding-top: calc(#{$spacing4} - #{$spacing1})
-            padding-bottom: calc(#{$spacing4} - #{$spacing1})
+            padding-top: calc(#{$spacing-6} - #{$spacing-3})
+            padding-bottom: calc(#{$spacing-6} - #{$spacing-3})
         .block-call_to_action
-            margin-top: calc(#{$spacing4} - #{$spacing0})
+            margin-top: calc(#{$spacing-6} - #{$spacing-2})
         .block-organization_chart
-            padding-top: calc(#{$spacing3})
+            padding-top: calc(#{$spacing-5})
     .projects-navigation
         align-items: center
         display: flex
@@ -198,7 +205,7 @@ header#document-header
                     
                 h3
                     @include h1
-                    margin: $spacing3 0 $spacing0
+                    margin: $spacing-5 0 $spacing-2
                     @include media-breakpoint-up(desktop)
                         font-size: $project-navigation-title
                     + span
@@ -227,30 +234,26 @@ header#document-header
                 margin: 0
                 width: 100%
             @include media-breakpoint-up(desktop)
-                padding-bottom: $spacing4
-                padding-top: $spacing4
+                padding-bottom: $spacing-6
+                padding-top: $spacing-6
                 picture img
                     margin: auto
                     max-height: unset
                 figcaption
                     font-size: 0
-    @include media-breakpoint-down(desktop)
-        .container
-            padding-left: 0
-            padding-right: 0
 
 .block-image 
     @include in-page-without-sidebar
         figure img
             margin-bottom: 0
-            margin-left: half($grid-gutter-sm)
-            margin-right: half($grid-gutter-sm)
-            width: calc(100% - #{$grid-gutter-sm})
+            margin-left: $spacing-1
+            margin-right: $spacing-1
+            width: calc(100% - #{var(--grid-gutter)})
             @include media-breakpoint-up(desktop)
-                width: col(8)
+                width: columns(8)
             @include media-breakpoint-down(desktop)
-                padding-bottom: half($grid-gutter-sm)
-                padding-top: half($grid-gutter-sm)
+                padding-bottom: $spacing-1
+                padding-top: $spacing-1
 .block-gallery 
     @include in-page-with-or-without-sidebar
         .gallery
@@ -285,14 +288,14 @@ header#document-header
                 figure:not(.cover) picture
                     margin-left: auto
                     margin-right: auto
-                    width: col(2.65,6)
+                    width: columns(2.65) // TODO CHECK
             @include media-breakpoint-up(xxl)
                 figure:not(.cover) picture
-                    width: col(2.85,6)
+                    width: columns(2.85) // TODO CHECK
             @include media-breakpoint-down(desktop)
                 display: block
                 figure
-                    padding: $spacing3
+                    padding: $spacing-5
                     &.cover
                         padding: 0 !important
                         picture 
@@ -301,8 +304,8 @@ header#document-header
                                 display: initial
                                 height: 100%
                     &:not(.cover) 
-                        padding-bottom: $spacing3
-                        padding-top: $spacing3
+                        padding-bottom: $spacing-5
+                        padding-top: $spacing-5
                         picture
                             margin-left: auto
                             margin-right: auto
@@ -314,7 +317,7 @@ header#document-header
 .block-image + .block-gallery
     padding-top: 0
     @include media-breakpoint-down(desktop)
-    margin-top: -$spacing3
+    margin-top: -$spacing-5
 @include media-breakpoint-up(desktop)
     .block-image + .block-gallery
         margin-top: -54px
@@ -328,20 +331,20 @@ header#document-header
 .block-organization_chart
     @include media-breakpoint-down(desktop)
         .persons
-            gap: calc(#{$spacing1} + #{$spacing0})
+            gap: calc(#{$spacing-3} + #{$spacing-2})
     @include media-breakpoint-up(desktop)
         .top
-            margin-bottom: $spacing4
+            margin-bottom: $spacing-6
         .avatar
-            width: col(3,8)
+            width: columns(3)
         @include in-page-with-or-without-sidebar
             .persons
                 @include grid(3, desktop)
             .avatar
-                width: col(3,8)
+                width: columns(3)
                 margin-bottom: 0
             .description + .avatar
-                margin-right: $spacing1
+                margin-right: $spacing-3
     .person
         align-items: center
         flex-direction: row 
@@ -356,13 +359,13 @@ header#document-header
     .organizations
         display: flex
         justify-content: center
-        column-gap: $grid-gutter
+        column-gap: var(--grid-gutter)
         flex-wrap: wrap
-        row-gap: half($grid-gutter)
+        row-gap: half(var(--grid-gutter))
         .organization
-            width: col(6)
+            width: columns(6)
             @include media-breakpoint-up(desktop)
-                width: col(2)
+                width: columns(2)
 
 .block-chapter
     &--no_background 
@@ -375,11 +378,11 @@ header#document-header
                 .text
                     display: flex
                     width: 100%
-                    gap: $grid-gutter
+                    gap: var(--grid-gutter)
                     .top 
-                        width: col(5)
+                        width: columns(5)
                         + * 
-                            width: col(7)
+                            width: columns(7)
     &.block-chapter--alt_background 
     &.block-chapter--alt_background 
         background: none
@@ -391,27 +394,27 @@ header#document-header
                 .rich-text
                     width: 100%
                 .top
-                    margin-bottom: $spacing4
+                    margin-bottom: $spacing-6
                 p + p 
-                    margin-top: $spacing0
+                    margin-top: $spacing-2
                 @include media-breakpoint-down(desktop)
-                    margin-bottom: $spacing3
+                    margin-bottom: $spacing-5
 
 .block-call_to_action
     overflow: hidden
     position: relative
     @include in-page-without-sidebar
         .block-content
-            padding-top: $spacing4
-            padding-bottom: $spacing4
+            padding-top: $spacing-6
+            padding-bottom: $spacing-6
             @include media-breakpoint-up(desktop)
-                padding-top: $spacing5
-                padding-bottom: $spacing5
+                padding-top: $spacing-7
+                padding-bottom: $spacing-7
         .call_to_action--with-image
             display: flex
             justify-content: center
             @include media-breakpoint-down(desktop)
-                padding-top: $spacing3
+                padding-top: $spacing-5
             picture
                 bottom: 0
                 left: 0
@@ -438,7 +441,7 @@ header#document-header
                 &:focus-visible
                     outline-color: $block-call-to-action-button-hover-background
                 &::after
-                    margin-left: $spacing0
+                    margin-left: $spacing-2
 .block-posts--list
     @include in-page-without-sidebar
         @include media-breakpoint-up(desktop)
@@ -453,7 +456,7 @@ header#document-header
                     left: 50%
                     transform: translate(-50%, -50%)
                     transition: opacity .2s ease
-                    width: col(2,7)
+                    width: columns(2)
                     z-index: 100
                 &:hover
                     .media
