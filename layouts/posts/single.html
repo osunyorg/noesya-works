@@ -8,7 +8,7 @@
     {{ if .Date }}<meta itemprop="datePublished" content="{{ .Date.Format "2006-01-02T15:04" }}">{{ end }}
     {{ if .Params.summary }}<meta itemprop="abstract" content="{{ partial "PrepareText" .Params.summary }}">{{ end }}
     {{ if .Summary }}<meta itemprop="description" content="{{ partial "PrepareText" .Summary }}">{{ end }}
- 
+
     <div class="block block-summary">
       <div class="container">
         <div class="block-content">
@@ -16,11 +16,10 @@
             "context" .
             "block_wrapped" false
           ) }}
-
           {{ with .Params.contents }}
             {{ $organization_blocks := where . "title" "[organisation]" }}
             {{ with index $organization_blocks 0 }}
-              {{ with index .data.partners 0 }}
+              {{ with index .data.organizations 0 }}
                 <div>
                   <div class="top">
                     <p class="block-title">L'organisation</p>

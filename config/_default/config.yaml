@@ -6,6 +6,8 @@ params:
   ecosystem: works
   breadcrumb:
     position: none
+  summary:
+    position: content
   posts:
     date_format: "2006"
     index:
