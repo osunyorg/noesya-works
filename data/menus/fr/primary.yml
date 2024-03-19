@@ -17,4 +17,8 @@ items:
   target: "/home-alternative/"
   kind: page
   children: []
+- title: Projets
+  target: "/projets/"
+  kind: page
+  children: []
 

@@ -10,6 +10,8 @@ fr:
     social:
   permalinks:
     posts: /actualites/:year-:month-:day-:slug/
+    projects: /projets/:year-:slug/
+    projects_categories: /projets/:slug/
     organizations: /organisations/:slug/
     persons: /equipe/:slug/
   taxonomies:
