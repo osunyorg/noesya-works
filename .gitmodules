@@ -2,6 +2,6 @@
 	path = themes/noesya-hugo-theme
 	url = https://github.com/noesya/noesya-hugo-theme.git
 
-[submodule "themes/osuny-hugo-theme-aaa"]
-	path = themes/osuny-hugo-theme-aaa
-	url = https://github.com/noesya/osuny-hugo-theme-aaa.git
+[submodule "themes/osuny"]
+	path = themes/osuny
+	url = https://github.com/osunyorg/theme.git
