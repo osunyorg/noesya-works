@@ -11,7 +11,9 @@ params:
   posts:
     date_format: "2006"
     index:
-      show_description: false
+      options:
+        summary: false
+      # show_description: false
   seo:
     title:
       separator: "•"
