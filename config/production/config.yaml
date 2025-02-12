@@ -2,6 +2,11 @@
 
 baseURL: https://works.noesya.coop
 
+## OSUNY
+osuny:
+  website:
+    id: d6aae95e-0071-421a-8d2f-cca82901abeb
+
 ## LANGUAGE
 defaultContentLanguage: fr
 defaultContentLanguageInSubdir: false
