@@ -29,8 +29,6 @@
                 margin: 0
                 width: 100%
             @include media-breakpoint-up(desktop)
-                padding-bottom: $spacing-6
-                padding-top: $spacing-6
                 picture img
                     margin: auto
                     max-height: unset
@@ -39,6 +37,9 @@
 
 .block-image 
     @include in-page-without-sidebar
+        picture
+            padding-bottom: offset(2)
+            padding-top: offset(2)
         figure img
             margin-bottom: 0
             margin-left: $spacing-1
@@ -54,7 +55,9 @@
         .gallery
             @include grid(2, desktop)
             align-items: inherit
-            figure 
+            figure
+                padding-bottom: columns(2)
+                padding-top: columns(2)
                 &::after
                     display: none
                 img
