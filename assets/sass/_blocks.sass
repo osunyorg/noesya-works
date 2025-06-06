@@ -7,6 +7,7 @@
     
 .block-testimonials
     @include media-breakpoint-up(desktop)
+        .block-title,
         blockquote
             text-align: center
 
@@ -145,19 +146,19 @@
 //         .description
 //             text-align: left
 
-.block-partners
+.block-organizations
     .media
         background: none
-    h3
-        font-size: 0
     .organizations
-        display: flex
+        display: flex !important
         justify-content: center
         column-gap: var(--grid-gutter)
         flex-wrap: wrap
         row-gap: half(var(--grid-gutter))
         .organization
             width: columns(6)
+            .organization-title
+                @extend .sr-only
             @include media-breakpoint-up(desktop)
                 width: columns(2)
 
@@ -197,6 +198,24 @@
 .block-call_to_action
     overflow: hidden
     position: relative
+    figcaption
+        @extend .sr-only
+    @include media-breakpoint-down(desktop)
+        padding-top: 0
+        padding-bottom: var(--grid-gutter)
+        .container
+            picture
+                margin-left: var(--grid-gutter-negative)
+                margin-right: var(--grid-gutter-negative)
+            .call_to_action
+                padding-top: 0
+                padding-bottom: 0
+                > div
+                    .actions
+                        display: flex
+                        justify-content: center
+                        a:first-child
+                            margin-right: 0
     @include in-page-without-sidebar
         .block-content
             padding-top: $spacing-6
