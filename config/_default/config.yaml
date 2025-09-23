@@ -2,6 +2,9 @@ theme: noesya-hugo-theme
 _merge: deep
 params:
   ecosystem: works
+  blocks:
+    ignored:
+      - block-class-organisation
   breadcrumb:
     position: none
   summary:
