@@ -36,6 +36,10 @@ header#document-header
         padding-bottom: $spacing-7
     .hero
         min-height: unset
+    .document-content
+        .blocks
+            .block:first-child
+                margin-top: 0
 
 .posts__page 
     header#document-header 
@@ -125,7 +129,9 @@ header#document-header
             li
                 max-width: columns(9)
     .block-summary
-        padding-top: $spacing-5 !important
+        // padding-top: $spacing-5 !important
+        padding-top: 0 !important
+        padding-bottom: 0 !important
         .lead
             p
                 @include h3

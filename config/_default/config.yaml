@@ -1,6 +1,9 @@
 theme: noesya-hugo-theme
 _merge: deep
 params:
+  debug:
+    active: false
+    productionUrl: https://works.noesya.coop
   ecosystem: works
   blocks:
     ignored:
@@ -18,10 +21,11 @@ params:
   seo:
     title:
       separator: "•"
+  components:
+    lightbox:
+      disabled: true
   image_sizes:
-    design_system:
-      lightbox:
-        disabled: true
+    _default:
       hero:
         mobile:   400
         tablet:   1024
