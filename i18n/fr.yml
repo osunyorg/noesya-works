@@ -8,6 +8,6 @@ commons:
 pages:
   posts: Projets
 posts:
-  next: Projet suivant
-  next_aria: Projet suivant “{{ .Title }}”
+  next: Voir un autre projet
+  next_aria: "Voir un autre projet : “{{ .Title }}”"
   title: Projet
