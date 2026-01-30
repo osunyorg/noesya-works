@@ -162,14 +162,6 @@ header#document-header
                 width: columns(8)
                 + div picture
                     width: columns(1.5) // TODO CHECK
-    @include media-breakpoint-up(desktop)
-        .block
-            padding-top: calc(#{$spacing-6} - #{$spacing-3})
-            padding-bottom: calc(#{$spacing-6} - #{$spacing-3})
-        .block-call_to_action
-            margin-top: calc(#{$spacing-6} - #{$spacing-2})
-        .block-organization_chart
-            padding-top: calc(#{$spacing-5})
     .projects-navigation
         align-items: center
         display: flex
@@ -220,6 +212,15 @@ header#document-header
         font-family: $body-font-family
         font-style: italic
         text-transform: initial
+    
+    @include media-breakpoint-up(desktop)
+        .block
+            padding-top: calc(#{$spacing-6} - #{$spacing-3})
+            padding-bottom: calc(#{$spacing-6} - #{$spacing-3})
+        .block-call_to_action
+            margin-top: calc(#{$spacing-6} - #{$spacing-2})
+        .block-organization_chart
+            padding-top: calc(#{$spacing-5})
 
 
 @media (prefers-color-scheme: dark)

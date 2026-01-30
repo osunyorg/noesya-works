@@ -130,6 +130,11 @@
         .block-title
             text-align: center
 
+    .persons-grid
+        @include media-breakpoint-up(desktop)
+            justify-content: center
+
+
 // .block-persons
 //     @include media-breakpoint-down(desktop)
 //         .persons
@@ -207,52 +212,59 @@
     position: relative
     figcaption
         @extend .sr-only
-    @include media-breakpoint-down(desktop)
-        padding-top: 0
-        padding-bottom: var(--grid-gutter)
-        .container
-            figure
-                margin-bottom: var(--grid-gutter)
-            picture
-                margin-left: var(--grid-gutter-negative)
-                margin-right: var(--grid-gutter-negative)
-            .call_to_action
-                padding-top: 0
-                padding-bottom: 0
-                > div
-                    .actions
-                        display: flex
-                        justify-content: center
-                        a:first-child
-                            margin-right: 0
-                            margin-top: 0
-    @include in-page-without-sidebar
-        .block-content
-            padding-top: $spacing-6
-            padding-bottom: $spacing-6
-            @include media-breakpoint-up(desktop)
-                padding-top: $spacing-7
-                padding-bottom: $spacing-7
-        .call_to_action--with-image
+    
+    .call_to_action
+        .actions 
+            align-items: center
             display: flex
             justify-content: center
-            @include media-breakpoint-down(desktop)
-                padding-top: $spacing-5
-            figure
-                bottom: 0
-                left: 0
-                position: absolute
-                top: 0
-                right: 0
-                margin-bottom: 0
-                figcaption
-                    display: none // credits are display above the cta
-                img
-                    height: 100%
-                    object-fit: cover
-                    object-position: top
-                    width: 100%
-        .actions 
+            gap: var(--grid-gutter)
+        
+    .call_to_action--with-image
+        display: flex
+        justify-content: center
+        padding-top: 0
+        padding-bottom: 0
+        figure
+            bottom: 0
+            left: 0
+            position: absolute
+            top: 0
+            right: 0
+            margin-bottom: 0
+            figcaption
+                display: none // credits are displayed above the cta
+            picture
+                height: 100%
+                width: 100%
+            img
+                height: 100%
+                object-fit: cover
+                object-position: top
+                
+
+    @include media-breakpoint-down(desktop)
+        .call_to_action
+            .actions
+                z-index: 2
+                position: relative
+                flex-direction: column
+                a
+                    margin-right: 0
+                    margin-top: 0
+                    width: columns(9)
+                    &:first-child
+                        margin-top: 0
+    
+    @include in-page-without-sidebar
+        .block-content
+            padding-top: $spacing-7
+            padding-bottom: $spacing-7
+        
+        .call_to_action
+            > div
+                grid-column: 1/-1 !important
+        .actions
             margin-top: 0
             position: relative
             text-align: center
@@ -267,6 +279,8 @@
                     outline-color: $block-call-to-action-accent-button-hover-background
                 &::after
                     margin-left: $spacing-2
+            
+
 .block-posts--list
     @include in-page-without-sidebar
         @include media-breakpoint-up(desktop)
