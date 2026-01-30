@@ -17,7 +17,7 @@
             "block_wrapped" false
           ) }}
           {{ with .Params.contents }}
-            {{ $organization_blocks := where . "title" "[organisation]" }}
+            {{ $organization_blocks := where . "html_class" "in" site.Params.blocks.ignored }}
             {{ with index $organization_blocks 0 }}
               {{ with index .data.organizations 0 }}
                 <div>

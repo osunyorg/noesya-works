@@ -3,7 +3,7 @@
   <div class="blocks">
   {{- range .Params.contents -}}
     {{ if eq .kind "block" }}
-      {{ if ne .title "[organisation]" }}
+      {{ if not (in site.Params.blocks.ignored .Params.html_class) }}
         {{ $template := printf "blocks/templates/%s.html" .template }}
         {{ partial $template (dict 
             "block" . 
