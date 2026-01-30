@@ -4,19 +4,17 @@
     <div class="block-content">
       <nav class="projects-navigation" aria-label="{{ i18n "commons.pagination.between.posts" }}">
         <ul>
-          {{- if .PrevInSection -}}
-            {{with .Site.RegularPages.Prev . }}
-              <li>
-                {{ $title := partial "PrepareHTML" .Title -}}
-                <a href="{{.RelPermalink}}" title="{{ safeHTML (i18n "posts.next_aria" (dict "Title" $title)) }}">
-                  <span class="navigation">
-                    {{- i18n "posts.next" -}}
-                  </span>
-                  <h3>{{- $title -}}</h3>
-                  <span>{{ .Date.Format "2006"}}</span>
-                </a>
-              </li>
-            {{end}}
+          {{with .PrevInSection  }}
+            <li>
+              {{ $title := partial "PrepareHTML" .Title -}}
+              <a href="{{.RelPermalink}}" title="{{ safeHTML (i18n "posts.next_aria" (dict "Title" $title)) }}">
+                <span class="navigation">
+                  {{- i18n "posts.next" -}}
+                </span>
+                <h3>{{- $title -}}</h3>
+                <span>{{ .Date.Format "2006"}}</span>
+              </a>
+            </li>
           {{- end -}}
           {{- if eq .PrevInSection nil -}}
             {{$posts := ($.Site.GetPage "posts" .Section).Pages.ByPublishDate.Reverse }}

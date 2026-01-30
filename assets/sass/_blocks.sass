@@ -228,7 +228,8 @@
                 &:focus-visible
                     outline-color: $block-call-to-action-accent-button-hover-background
                 &::after
-                    margin-left: $spacing-2
+                    margin-left: auto
+                    padding-left: $spacing-2
         
     .call_to_action--with-image
         display: flex
@@ -265,8 +266,6 @@
                     width: columns(9)
                     &:first-child
                         margin-top: 0
-                    &::after
-                        margin-left: auto
     
     @include in-page-without-sidebar
         .block-content
