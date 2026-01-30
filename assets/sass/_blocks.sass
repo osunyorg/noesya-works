@@ -219,6 +219,16 @@
             display: flex
             justify-content: center
             gap: var(--grid-gutter)
+            a
+                @include hover-translate-icon
+                @include icon(arrow-right-line, after)
+                display: flex
+                align-items: center
+                margin: 0
+                &:focus-visible
+                    outline-color: $block-call-to-action-accent-button-hover-background
+                &::after
+                    margin-left: $spacing-2
         
     .call_to_action--with-image
         display: flex
@@ -255,6 +265,8 @@
                     width: columns(9)
                     &:first-child
                         margin-top: 0
+                    &::after
+                        margin-left: auto
     
     @include in-page-without-sidebar
         .block-content
@@ -269,16 +281,6 @@
             position: relative
             text-align: center
             z-index: 2
-            a
-                @include hover-translate-icon
-                @include icon(arrow-right-line, after)
-                display: flex
-                align-items: center
-                margin: 0
-                &:focus-visible
-                    outline-color: $block-call-to-action-accent-button-hover-background
-                &::after
-                    margin-left: $spacing-2
             
 
 .block-posts--list
