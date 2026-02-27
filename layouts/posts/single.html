@@ -6,8 +6,8 @@
     <meta itemprop="headline" content="{{ partial "PrepareHTML" .Title }}">
     <meta itemprop="url" content="{{ .Permalink }}">
     {{ if .Date }}<meta itemprop="datePublished" content="{{ .Date.Format "2006-01-02T15:04" }}">{{ end }}
-    {{ if .Params.summary }}<meta itemprop="abstract" content="{{ partial "PrepareText" .Params.summary }}">{{ end }}
-    {{ if .Summary }}<meta itemprop="description" content="{{ partial "PrepareText" .Summary }}">{{ end }}
+    {{ if .Params.summary }}<meta itemprop="abstract" content="{{ safeHTML .Params.summary }}">{{ end }}
+    {{ if .Summary }}<meta itemprop="description" content="{{ safeHTML .Summary }}">{{ end }}
 
     <div class="block block-summary">
       <div class="container">
