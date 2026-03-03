@@ -27,7 +27,7 @@
           {{ if not site.Params.components.lightbox.disabled }}
             <a  class="glightbox"
                 data-glightbox="type: image;{{ if .image.credit }}description: {{ safeHTML .image.credit }}{{ end }}"
-                href="{{ partial "GetLightboxUrl" .image }}"
+                href="{{ partial "commons/lightbox/helpers/GetUrl" .image }}"
                 title="{{- i18n "commons.lightbox.link.title" -}}">
           {{ end }}
             {{ partial "commons/image.html"
