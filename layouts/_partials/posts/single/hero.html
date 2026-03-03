@@ -24,28 +24,18 @@
       </div>
       {{- if $image }}
         <figure>
-          {{ if not site.Params.components.lightbox.disabled }}
-            <a  class="glightbox"
-                data-glightbox="type: image;{{ if .image.credit }}description: {{ safeHTML .image.credit }}{{ end }}"
-                href="{{ partial "commons/lightbox/helpers/GetUrl" .image }}"
-                title="{{- i18n "commons.lightbox.link.title" -}}">
+          {{ partial "commons/image.html" (dict
+            "image"    $image
+            "sizes"    ( $sizes | default site.Params.image_sizes._default.hero )
+            "lazy"     false
+          ) }}
+          {{ if partial "GetTextFromHTML" $image.credit }}
+            <figcaption tabindex="0">
+              <p>
+                {{- partial "GetTextFromHTML" $image.credit -}}
+              </p>
+            </figcaption>
           {{ end }}
-            {{ partial "commons/image.html"
-              (dict
-                "image"    $image
-                "sizes"    ( $sizes | default site.Params.image_sizes._default.hero )
-                "lazy"     false
-              ) }}
-          {{ if not site.Params.components.lightbox.disabled }}
-            </a>
-          {{ end }}
-            {{ if partial "GetTextFromHTML" $image.credit }}
-              <figcaption tabindex="0">
-                <p>
-                  {{- partial "GetTextFromHTML" $image.credit -}}
-                </p>
-              </figcaption>
-            {{ end }}
         </figure>
       {{ end -}}
     </div>
