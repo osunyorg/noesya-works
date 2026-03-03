@@ -12,7 +12,7 @@
       {{- end -}}
     {{- else if (eq .kind "heading") -}}
       <div class="heading container" id="{{ urlize .title }}">
-        <h2>{{ partial "PrepareHTML" .title }}</h2>
+        <h2>{{ safeHTML .title }}</h2>
       </div>
     {{- end -}}
   {{- end -}}

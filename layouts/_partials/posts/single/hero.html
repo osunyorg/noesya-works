@@ -18,7 +18,7 @@
     <div class="content">
       <div class="hero-text">
         <hgroup>
-          <h1>{{ partial "PrepareHTML" $title }}</h1>
+          <h1>{{ safeHTML $title }}</h1>
           <p>{{ .Date.Format "2006" }}</p>
         </hgroup>
       </div>
@@ -26,7 +26,7 @@
         <figure>
           {{ if not site.Params.components.lightbox.disabled }}
             <a  class="glightbox"
-                data-glightbox="type: image;{{ if .image.credit }}description: {{ partial "PrepareHTML" .image.credit }}{{ end }}"
+                data-glightbox="type: image;{{ if .image.credit }}description: {{ safeHTML .image.credit }}{{ end }}"
                 href="{{ partial "GetLightboxUrl" .image }}"
                 title="{{- i18n "commons.lightbox.link.title" -}}">
           {{ end }}

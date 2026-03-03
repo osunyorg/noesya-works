@@ -6,7 +6,7 @@
         <ul>
           {{with .PrevInSection  }}
             <li>
-              {{ $title := partial "PrepareHTML" .Title -}}
+              {{ $title := safeHTML .Title -}}
               <a href="{{.RelPermalink}}" title="{{ safeHTML (i18n "posts.next_aria" (dict "Title" $title)) }}">
                 <span class="navigation">
                   {{- i18n "posts.next" -}}
@@ -20,7 +20,7 @@
             {{$posts := ($.Site.GetPage "posts" .Section).Pages.ByPublishDate.Reverse }}
               {{ range first 1 $posts }}
                 <li>
-                  {{ $title := partial "PrepareHTML" .Title -}}
+                  {{ $title := safeHTML .Title -}}
                   <a href="{{.RelPermalink}}" title="{{ safeHTML (i18n "posts.next_aria" (dict "Title" $title)) }}">
                     <span class="navigation">
                       {{- i18n "posts.next" -}}
