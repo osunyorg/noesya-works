@@ -29,10 +29,10 @@
             "sizes"    ( $sizes | default site.Params.image_sizes._default.hero )
             "lazy"     false
           ) }}
-          {{ if partial "GetTextFromHTML" $image.credit }}
+          {{ if $image.credit }}
             <figcaption tabindex="0">
               <p>
-                {{- partial "GetTextFromHTML" $image.credit -}}
+                {{- partial "helpers/text/GetFromHTML" $image.credit -}}
               </p>
             </figcaption>
           {{ end }}
