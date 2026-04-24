@@ -8,6 +8,8 @@ params:
   blocks:
     ignored:
       - block-class-organisation
+  design:
+    force_full_width: true
   breadcrumb:
     position: none
   summary:
