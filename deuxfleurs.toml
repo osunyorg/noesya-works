@@ -13,3 +13,32 @@ Cache-Control = "max-age=31536000, no-transform, public"
 for = ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.gif", "**/*.webp"]
 [headers.values]
 Cache-Control = "max-age=31536000, no-transform, public"
+
+[[redirects]]
+from = "/publications/2023-03-01-ecosysteme-de-la-mode/index.html"
+to = "/actualites/2023-03-01-ecosysteme-de-la-mode/"
+
+[[redirects]]
+from = "/publications/2022-06-21-iut-bordeaux-montaigne/index.html"
+to = "/actualites/2022-06-21-iut-bordeaux-montaigne/"
+
+[[redirects]]
+from = "/actualites/2025-06-01-campus-art-mediterranee/index.html"
+to = "/actualites/2025-07-01-campus-art-mediterranee/"
+
+[[redirects]]
+from = "/publications/2021-09-01-ensemble-a-table/index.html"
+to = "/actualites/2021-09-01-ensemble-a-table/"
+
+[[redirects]]
+from = "/publications/2022-11-01-extension-ecogestes/index.html"
+to = "/actualites/2022-11-01-extension-ecogestes/"
+
+[[redirects]]
+from = "/actualites/2026-01-30-campus-art-mediterranee/index.html"
+to = "/actualites/2025-07-01-campus-art-mediterranee/"
+
+[[redirects]]
+from = "/publications/index.html"
+to = "/actualites/"
+
