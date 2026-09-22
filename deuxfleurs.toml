@@ -27,6 +27,10 @@ from = "/actualites/2025-06-01-campus-art-mediterranee/index.html"
 to = "/actualites/2025-07-01-campus-art-mediterranee/"
 
 [[redirects]]
+from = "/organisations/categories/clients/index.html"
+to = "/organisations/categories/client/"
+
+[[redirects]]
 from = "/publications/2021-09-01-ensemble-a-table/index.html"
 to = "/actualites/2021-09-01-ensemble-a-table/"
 
