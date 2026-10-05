@@ -27,6 +27,10 @@ from = "/actualites/2025-06-01-campus-art-mediterranee/index.html"
 to = "/actualites/2025-07-01-campus-art-mediterranee/"
 
 [[redirects]]
+from = "/actualites/2026-01-28-gaite-lyrique/index.html"
+to = "https://www.noesya.coop/projets/2026-gaite-lyrique/"
+
+[[redirects]]
 from = "/organisations/categories/clients/index.html"
 to = "/organisations/categories/client/"
 
