@@ -15,38 +15,38 @@ for = ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.gif", "**/*.webp"]
 Cache-Control = "max-age=31536000, no-transform, public"
 
 [[redirects]]
-from = "/publications/2023-03-01-ecosysteme-de-la-mode/index.html"
-to = "/actualites/2023-03-01-ecosysteme-de-la-mode/"
+from = "/actualites/2025-09-01-observatoire-citoyen-de-la-publicite/index.html"
+to = "https://www.noesya.coop/projets/2025-observatoire-citoyen-de-la-publicite/"
 
 [[redirects]]
-from = "/publications/2022-06-21-iut-bordeaux-montaigne/index.html"
-to = "/actualites/2022-06-21-iut-bordeaux-montaigne/"
-
-[[redirects]]
-from = "/actualites/2025-06-01-campus-art-mediterranee/index.html"
-to = "/actualites/2025-07-01-campus-art-mediterranee/"
+from = "/actualites/2021-09-01-ensemble-a-table/index.html"
+to = "https://www.noesya.coop/projets/2021-ensemble-a-table/"
 
 [[redirects]]
 from = "/actualites/2026-01-28-gaite-lyrique/index.html"
 to = "https://www.noesya.coop/projets/2026-gaite-lyrique/"
 
 [[redirects]]
-from = "/organisations/categories/clients/index.html"
-to = "/organisations/categories/client/"
+from = "/actualites/2022-06-21-iut-bordeaux-montaigne/index.html"
+to = "https://www.noesya.coop/projets/2022-iut-bordeaux-montaigne/"
 
 [[redirects]]
-from = "/publications/2021-09-01-ensemble-a-table/index.html"
-to = "/actualites/2021-09-01-ensemble-a-table/"
+from = "/actualites/2022-11-01-extension-ecogestes/index.html"
+to = "https://www.noesya.coop/projets/2022-extension-numecogestes/"
 
 [[redirects]]
-from = "/publications/2022-11-01-extension-ecogestes/index.html"
-to = "/actualites/2022-11-01-extension-ecogestes/"
+from = "/actualites/2025-07-01-campus-art-mediterranee/index.html"
+to = "https://www.noesya.coop/projets/2025-campus-art-mediterranee/"
 
 [[redirects]]
-from = "/actualites/2026-01-30-campus-art-mediterranee/index.html"
-to = "/actualites/2025-07-01-campus-art-mediterranee/"
+from = "/actualites/2024-03-29-ecotheque/index.html"
+to = "https://www.noesya.coop/projets/2024-ecotheque/"
 
 [[redirects]]
-from = "/publications/index.html"
-to = "/actualites/"
+from = "/actualites/2025-06-06-rennes-ville-et-metropole/index.html"
+to = "https://www.noesya.coop/projets/2025-rennes-ville-et-metropole/"
+
+[[redirects]]
+from = "/actualites/2023-03-01-ecosysteme-de-la-mode/index.html"
+to = "https://www.noesya.coop/projets/2023-ecosysteme-de-la-mode/"
 
