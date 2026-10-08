@@ -15,6 +15,10 @@ for = ["**/*.png", "**/*.jpg", "**/*.jpeg", "**/*.gif", "**/*.webp"]
 Cache-Control = "max-age=31536000, no-transform, public"
 
 [[redirects]]
+from = "/index.html"
+to = "https://www.noesya.coop/projets/"
+
+[[redirects]]
 from = "/actualites/2025-09-01-observatoire-citoyen-de-la-publicite/index.html"
 to = "https://www.noesya.coop/projets/2025-observatoire-citoyen-de-la-publicite/"
 
