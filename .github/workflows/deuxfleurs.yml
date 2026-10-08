@@ -36,6 +36,9 @@ jobs:
     - name: Compilation du site
       run: yarn osuny build
 
+    - name: Suppression de la page d'accueil (redirigée vers noesya.coop/projets)
+      run: rm public/index.html
+
     - name: Déploiement Garage
       run: npx --yes dxfl deploy works.noesya.coop public/ --yes
       env:
